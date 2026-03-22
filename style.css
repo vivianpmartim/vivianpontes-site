@@ -818,6 +818,35 @@ footer {
     letter-spacing: 0.2em;
   }
 
+  /* Hero — mobile: imagem na proporção natural, botões abaixo */
+  #hero {
+    min-height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .hero-img {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    z-index: auto;
+  }
+  .hero-overlay { display: none; }
+  .hero-content {
+    position: static;
+    background: var(--bg);
+    padding: 28px 20px 36px;
+    margin-top: 0;
+  }
+  .hero-ctas {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+
   /* Sections */
   .section-header { margin-bottom: 48px; }
   .reading-order  { padding: 0 4px; margin-top: 40px; }
@@ -858,14 +887,8 @@ footer {
 
   .container { padding: 0 16px; }
 
-  /* Hero */
-  .hero-ctas {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0 16px;
-  }
-  .hero-ctas .btn { width: 100%; justify-content: center; }
+  /* Hero — refinamento extra no mobile pequeno */
+  .hero-content { padding: 24px 16px 32px; }
 
   /* Títulos */
   .section-header h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
