@@ -778,42 +778,138 @@ footer {
 /* ════════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════════ */
+
+/* ── Tablet largo ── */
 @media (max-width: 1024px) {
-  .books-grid { grid-template-columns: repeat(2, 1fr); }
-  .art-grid { grid-template-columns: repeat(2, 1fr); }
+  .books-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .art-grid   { grid-template-columns: repeat(2, 1fr); }
   .autora-grid { grid-template-columns: 1fr; gap: 48px; }
-  .autora-image { max-width: 420px; aspect-ratio: 1/1; }
-  .video-grid { grid-template-columns: 1fr; }
+  .autora-image { max-width: 400px; margin: 0 auto; aspect-ratio: 3/4; }
+  .video-grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* ── Tablet / mobile grande ── */
 @media (max-width: 768px) {
-  :root { --section-py: 80px; }
-  .books-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-  .art-grid { grid-template-columns: repeat(2, 1fr); }
-  .order-options { flex-direction: column; }
+  :root { --section-py: 72px; }
+
+  .container { padding: 0 20px; }
+
+  /* Nav */
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
-  #nav { padding: 0 24px; }
-  .form-row { flex-direction: column; }
+  #nav { padding: 0 20px; }
 
-  /* Mobile nav open state */
+  /* Mobile nav open */
   #nav.mobile-open .nav-links {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: var(--nav-h);
     left: 0; right: 0;
-    background: rgba(8,8,10,0.97);
-    padding: 32px;
+    background: rgba(8,8,10,0.98);
+    padding: 32px 24px;
     gap: 24px;
     border-bottom: 1px solid rgba(200,162,44,0.12);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
-  #nav.mobile-open .nav-links a { font-size: 0.9rem; }
+  #nav.mobile-open .nav-links a {
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* Sections */
+  .section-header { margin-bottom: 48px; }
+  .reading-order  { padding: 0 4px; margin-top: 40px; }
+  .order-options  { flex-direction: column; gap: 16px; }
+  .gallery-intro  { margin-bottom: 40px; }
+  .bastidores-banner { margin-bottom: 48px; }
+
+  /* Books */
+  .books-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 28px;
+  }
+  .book-body { padding: 24px 20px; }
+
+  /* Art grid */
+  .art-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  /* Video grid */
+  .video-grid { grid-template-columns: 1fr; }
+
+  /* Author */
+  .autora-grid { gap: 36px; }
+  .autora-image { max-width: 320px; }
+
+  /* Newsletter */
+  .newsletter-form-wrap { padding: 48px 20px; }
+  .form-row { flex-direction: column; gap: 10px; }
+
+  /* Footer */
+  .footer-nav { gap: 16px; }
 }
 
+/* ── Mobile padrão (iPhone, Android) ── */
 @media (max-width: 480px) {
-  .art-grid { grid-template-columns: 1fr; }
-  .hero-ctas { flex-direction: column; align-items: center; }
-  .autora-links { flex-direction: column; }
+  :root { --section-py: 56px; }
+
+  .container { padding: 0 16px; }
+
+  /* Hero */
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 16px;
+  }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+
+  /* Títulos */
+  .section-header h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
+
+  /* Books */
+  .books-grid { max-width: 100%; }
+  .book-title  { font-size: 1.6rem; }
+  .buy-buttons .btn {
+    font-size: 0.65rem;
+    padding: 12px 18px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Art */
+  .art-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+  /* Reading order */
+  .order-card { min-width: 0; padding: 20px 16px; }
+
+  /* Bastidores */
+  .bastidores-banner { margin-bottom: 36px; }
+
+  /* Author */
+  .autora-image { max-width: 260px; }
+  .autora-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .autora-links .btn { width: 100%; justify-content: center; }
+
+  /* Newsletter */
+  .newsletter-form-wrap { padding: 40px 16px; }
+
+  /* Footer */
+  .footer-nav { gap: 12px; }
+  .footer-nav a { font-size: 0.6rem; }
+}
+
+/* ── Telemóvel pequeno (SE, Galaxy A) ── */
+@media (max-width: 375px) {
+  .nav-logo { font-size: 0.85rem; letter-spacing: 0.1em; }
+  .book-body { padding: 20px 16px; }
+  .book-title { font-size: 1.4rem; }
+  .autora-image { max-width: 220px; }
+  .section-header h2 { font-size: 1.4rem; }
 }
