@@ -604,6 +604,109 @@ body.kit-ativo  .btn-kit { display: inline-flex; }
 }
 
 /* ════════════════════════════════════════════
+   LIVRO 3 — ANÚNCIO / EM BREVE
+════════════════════════════════════════════ */
+#livro3 {
+  background: linear-gradient(180deg, var(--bg) 0%, #060609 50%, var(--bg) 100%);
+  border-top: 1px solid rgba(200,162,44,0.15);
+  border-bottom: 1px solid rgba(200,162,44,0.15);
+}
+.livro3-inner {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  padding: var(--section-py) 0;
+}
+.livro3-cover {
+  flex: 0 0 280px;
+  max-width: 280px;
+}
+.livro3-cover img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 48px rgba(200,162,44,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.livro3-cover img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 32px 72px rgba(0,0,0,0.9), 0 0 60px rgba(200,162,44,0.2);
+}
+.livro3-info { flex: 1; }
+.livro3-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  margin: 16px 0 20px;
+  line-height: 1.15;
+}
+.livro3-title em {
+  display: block;
+  font-size: 0.5em;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: var(--cream);
+  margin-top: 8px;
+}
+.livro3-desc {
+  color: var(--cream);
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+.livro3-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ════════════════════════════════════════════
+   MÚSICA DE ETERNIS
+════════════════════════════════════════════ */
+#musica { background: var(--bg); }
+.musica-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.musica-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(200,162,44,0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.musica-card:hover { border-color: rgba(200,162,44,0.35); }
+.musica-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+.musica-video iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+.musica-info { padding: 16px 20px 20px; }
+.musica-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.musica-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--cream);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════
    AUTHOR BIO
 ════════════════════════════════════════════ */
 #autora {
@@ -786,6 +889,11 @@ footer {
   .autora-grid { grid-template-columns: 1fr; gap: 48px; }
   .autora-image { max-width: 400px; margin: 0 auto; aspect-ratio: 3/4; }
   .video-grid { grid-template-columns: 1fr 1fr; }
+  /* Livro 3 */
+  .livro3-inner { gap: 40px; }
+  .livro3-cover { flex: 0 0 220px; max-width: 220px; }
+  /* Música */
+  .musica-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Tablet / mobile grande ── */
@@ -879,6 +987,13 @@ footer {
 
   /* Footer */
   .footer-nav { gap: 16px; }
+
+  /* Livro 3 */
+  .livro3-inner { flex-direction: column; gap: 32px; padding: var(--section-py) 0; }
+  .livro3-cover { flex: none; max-width: 220px; margin: 0 auto; }
+
+  /* Música */
+  .musica-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Mobile padrão (iPhone, Android) ── */
