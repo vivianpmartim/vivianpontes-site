@@ -123,6 +123,41 @@ footer > a:last-child:hover::after {
   color: var(--paper-light);
 }
 
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-switch {
+  min-height: 44px;
+  padding: 8px 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--wine);
+  background: var(--paper-light);
+  color: var(--wine);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: background .2s, color .2s, transform .2s;
+}
+
+.language-switch:hover {
+  background: var(--wine);
+  color: #fffaf1;
+  transform: translateY(-1px);
+}
+
+.flags {
+  font-size: 16px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
 .hero {
   min-height: 710px;
   padding: clamp(70px, 8vw, 118px) clamp(24px, 6.5vw, 100px) 58px;
@@ -855,6 +890,19 @@ a:focus-visible {
 
   .header-cta {
     display: none;
+  }
+
+  .header-actions {
+    gap: 0;
+  }
+
+  .language-switch {
+    min-height: 40px;
+    padding: 7px 10px;
+  }
+
+  .flags {
+    font-size: 14px;
   }
 
   .hero {
